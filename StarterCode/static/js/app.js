@@ -106,9 +106,10 @@ function pageBuilder(subject){
         console.log(metaFilter2)
 
         infoPanel.html("");
-
+       
         Object.entries(metaFilter2).forEach(([key, value]) => {
-            infoPanel.append("li").text(`${key}: ${value}`)
+            infoPanel.append("li").text(`${key}: ${value}`);
+            
         });
     })
 
