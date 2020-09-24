@@ -12,7 +12,8 @@ function pageBuilder(subject){
         var otuLabels = filteredData[0].otu_labels.slice(0,10);
         var otuIds =  filteredData[0].otu_ids.slice(0,10);
         var otuSamples = filteredData[0].sample_values.slice(0,10);
-        
+        var otuIdString = otuIds.map(otuIds => `OTU ${otuIds}`);
+
         console.log(otuIds);
 
         // Plotly charts
@@ -20,13 +21,13 @@ function pageBuilder(subject){
         var trace1 = [{
             type: "bar",
             x: otuSamples, 
-            y: otuIds.toString(),
+            y: otuIdString,
             orientation: "h",
             hovertext: otuLabels
         }];
         var layout = {
             title: 'OTU Samples and Values',
-            
+
             bargap: 0.05,
             height: 600,
             width: 800,
